@@ -367,6 +367,7 @@
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
 				C0762FFFA39FDBD2ABD2302B /* [CP] Copy Pods Resources */,
+				EBC4EFC0F42589E0D5F355E0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -388,6 +389,7 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				A0435480639B6ADD5C8D1764 /* [CP] Copy Pods Resources */,
+				A133F83DEFB21612C42B1B61 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -409,13 +411,13 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = P2PX3JU8FT;
+						DevelopmentTeam = 7CU2228SVU;
 						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = P2PX3JU8FT;
+						DevelopmentTeam = 7CU2228SVU;
 						LastSwiftMigration = 930;
 					};
 				};
@@ -646,6 +648,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NativeSigner/Pods-NativeSigner-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A133F83DEFB21612C42B1B61 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NativeSigner/Pods-NativeSigner-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework/OpenSSL",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NativeSigner/Pods-NativeSigner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C0762FFFA39FDBD2ABD2302B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -692,6 +712,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NativeSigner-NativeSignerTests/Pods-NativeSigner-NativeSignerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBC4EFC0F42589E0D5F355E0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NativeSigner-NativeSignerTests/Pods-NativeSigner-NativeSignerTests-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework/OpenSSL",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NativeSigner-NativeSignerTests/Pods-NativeSigner-NativeSignerTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -746,8 +784,9 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P2PX3JU8FT;
+				DEVELOPMENT_TEAM = 7CU2228SVU;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -779,9 +818,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = P2PX3JU8FT;
+				DEVELOPMENT_TEAM = 7CU2228SVU;
 				INFOPLIST_FILE = NativeSignerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -809,7 +849,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = P2PX3JU8FT;
+				DEVELOPMENT_TEAM = 7CU2228SVU;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../node_modules/react-native-camera/ios",
@@ -832,7 +872,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.parity.NativeSigner;
+				PRODUCT_BUNDLE_IDENTIFIER = joshuabomba.io.parity.NativeSigner;
 				PRODUCT_NAME = NativeSigner;
 				SWIFT_OBJC_BRIDGING_HEADER = "NativeSigner/NativeSigner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -851,7 +891,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P2PX3JU8FT;
+				DEVELOPMENT_TEAM = 7CU2228SVU;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../node_modules/react-native-camera/ios",
@@ -874,7 +914,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.parity.NativeSigner;
+				PRODUCT_BUNDLE_IDENTIFIER = joshuabomba.io.parity.NativeSigner;
 				PRODUCT_NAME = NativeSigner;
 				SWIFT_OBJC_BRIDGING_HEADER = "NativeSigner/NativeSigner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -944,7 +984,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P2PX3JU8FT;
+				DEVELOPMENT_TEAM = 7CU2228SVU;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../node_modules/react-native-camera/ios",
@@ -967,7 +1007,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.parity.NativeSigner;
+				PRODUCT_BUNDLE_IDENTIFIER = joshuabomba.io.parity.NativeSigner;
 				PRODUCT_NAME = NativeSigner;
 				SWIFT_OBJC_BRIDGING_HEADER = "NativeSigner/NativeSigner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -984,9 +1024,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = P2PX3JU8FT;
+				DEVELOPMENT_TEAM = 7CU2228SVU;
 				INFOPLIST_FILE = NativeSignerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

@@ -1,6 +1,19 @@
 platform :ios, '9.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
+def find_and_replace(dir, findstr, replacestr)
+  Dir[dir].each do |name|
+      text = File.read(name)
+      replace = text.gsub(findstr,replacestr)
+      if text != replace
+          puts "Fix: " + name
+          File.open(name, "w") { |file| file.puts replace }
+          STDOUT.flush
+      end
+  end
+  Dir[dir + '*/'].each(&method(:find_and_replace))
+end
+
 def add_flipper_pods!(versions = {})
   versions['Flipper'] ||= '~> 0.37.0'
   versions['DoubleConversion'] ||= '1.1.7'
@@ -102,5 +115,22 @@ target 'NativeSigner' do
   add_flipper_pods!
   post_install do |installer|
     flipper_post_install(installer)
-  end
+  
+    ## Fix for Flipper-Folly on iOS 14.5
+    find_and_replace("Pods/Flipper-Folly/folly/synchronization/DistributedMutex-inl.h",
+      "atomic_notify_one(state)", 
+      "folly::atomic_notify_one(state)")
+    find_and_replace("Pods/Flipper-Folly/folly/synchronization/DistributedMutex-inl.h",
+      "atomic_wait_until(&state, previous | data, deadline)", 
+      "folly::atomic_wait_until(&state, previous | data, deadline)")
+    find_and_replace("../node_modules/react-native/ReactCommon/turbomodule/core/platform/ios/RCTTurboModuleManager.mm",
+      "RCTBridgeModuleNameForClass(module))", 
+      "RCTBridgeModuleNameForClass(Class(module)))")
+    find_and_replace("../node_modules/react-native/React/CxxBridge/RCTCxxBridge.mm",
+    "_initializeModules:(NSArray<id<RCTBridgeModule>> *)modules", 
+    "_initializeModules:(NSArray<Class> *)modules")
+    find_and_replace("../node_modules/react-native/ReactCommon/turbomodule/core/platform/ios/RCTTurboModuleManager.mm", 
+    "RCTBridgeModuleNameForClass(strongModule))", 
+    "RCTBridgeModuleNameForClass(Class(strongModule)))")
+    end
 end
