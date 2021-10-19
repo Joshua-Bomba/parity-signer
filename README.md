@@ -4,6 +4,9 @@
 [<img src="./res/google-play-badge.png" width="250"/>](https://play.google.com/store/apps/details?id=io.parity.signer)
 [<img src="./res/app-store-badge.png" width="250"/>](https://itunes.apple.com/us/app/parity-signer/id1218174838)
 
+## What I did
+ - Build for IOS 9
+
 # Parity Signer - Turn your smartphone into a hardware wallet
 
 Parity Signer is a mobile application that allows any smartphone to act as an air-gapped crypto wallet. This is also known as "cold storage".
