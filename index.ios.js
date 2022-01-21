@@ -19,7 +19,7 @@
  * https://github.com/facebook/react-native
  * @flow
  */
-
+import "core-js/features/string/pad-start";
 import { AppRegistry, YellowBox } from 'react-native';
 
 import App from './src/App';
