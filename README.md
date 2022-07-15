@@ -10,16 +10,15 @@
    - Had to install native arm64 node
    - had to install native arm64 ruby (the macbook comes with the x86 one for some reason)
    - (I personally don't have rosetta 2 installed cause I wany to see how long I can go without it, 1 month so far!!!. I mean this is a seconday machine... well more like 4idary. guess we are pretty well into the life story now. this is just getting silly)
- - in parity-signer folder run npm install --force
- - sudo gem install cocoapods
- - in the ios folder (clear pods-lock & pods folder. think they should not exist) do install pod install
- - open project in xcode
- - Reset is basic XCode things
-   - Select the NativeSigner Project in the solution explorer (i don't know what it's called in apple speak)
-   - select Targets NativeSigner change the team and bundle indentifier
-   - select your targeted device
-   - Let her rip
-     - tested on ios 9.3.3 and it's not working. gonna keep at it
+ - in parity-signer folder run `npm install --force`
+ - `sudo gem install cocoapods`
+ - in the ios folder (clear pods-lock & pods folder. think they should not exist) do install `pod install`
+ - in ios folder open the `.xcodeproj` in xcode
+ - Select the NativeSigner Project in the solution explorer (i don't know what it's called in apple speak)
+ - select Targets NativeSigner change the team and bundle indentifier
+ - select your targeted device
+ - Let her rip
+   - tested on ios 9.3.3 and it's not working. gonna keep at it
 
 # Parity Signer - Turn your smartphone into a hardware wallet
 
