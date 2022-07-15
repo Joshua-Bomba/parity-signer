@@ -13,7 +13,7 @@
  - in parity-signer folder run `npm install --force`
  - `sudo gem install cocoapods`
  - in the ios folder (clear pods-lock & pods folder. think they should not exist) do install `pod install`
- - in ios folder open the `.xcodeproj` in xcode
+ - in ios folder open the `.xcworkspace` in xcode
  - Select the NativeSigner Project in the solution explorer (i don't know what it's called in apple speak)
  - select Targets NativeSigner change the team and bundle indentifier
  - select your targeted device
