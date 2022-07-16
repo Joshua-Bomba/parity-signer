@@ -27,7 +27,7 @@ module.exports = {
 			}
 		],
 		'@babel/plugin-proposal-object-rest-spread',
-		'metro-react-native-babel-preset/src/transforms/transform-symbol-member',
+		//'metro-react-native-babel-preset/src/transforms/transform-symbol-member',
 		'@babel/plugin-transform-react-display-name',
 		'@babel/plugin-proposal-optional-chaining',
 		'@babel/plugin-proposal-nullish-coalescing-operator',
@@ -73,5 +73,5 @@ module.exports = {
 		],
 		['./scripts/rewrite-node-global']
 	],
-	presets: []
+	presets: ['@babel/preset-typescript']
 };
